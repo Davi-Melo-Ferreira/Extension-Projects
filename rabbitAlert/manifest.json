@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "Distill Web Monitor",
+  "version": "1.0",
+  "permissions": ["scripting", "activeTab", "storage", "alarms", "notifications"],
+  "description": "Monitore páginas da web ou feeds para identificar alterações. Receba alertas via SMS e e-mail quando alterações forem detectadas.",
+  "action":{
+    "default_popup": "index.html"
+  },
+  "icons":{
+    "16": "imgs/download.png",
+    "32": "imgs/download.png",
+    "48": "imgs/download.png",
+    "128": "imgs/download.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://crm.plurisistemas.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "background":{
+    "service_worker": "background.js",
+    "type": "module"
+  }
+}
