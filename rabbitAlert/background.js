@@ -42,4 +42,4 @@ setInterval(() =>{
             message: getText(frases)
         });
     number = getRandomInt(10);
-}, 10000); // 10000 = 10s
+}, number); // 10000 = 10s
